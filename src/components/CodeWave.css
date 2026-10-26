@@ -1,0 +1,41 @@
+.code-canvas {
+    display:block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.code-wave {
+    background-color: #091510;
+    width: 100%;
+    min-height: 350px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.code-wave code {
+    display: inline-block;
+    color: #9fe6b8;
+    font-family: monospace;
+    animation: floatCode 1s ease-in-out infinite;
+}
+
+@keyframes floatCode {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .code-wave code {
+        animation: none;
+    }
+}

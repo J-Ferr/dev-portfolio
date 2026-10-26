@@ -1,0 +1,58 @@
+.hero {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  padding: 80px 10%;
+  min-height: 80vh;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.hero-text h2 {
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+
+.hero-greeting {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+}
+
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+}
+
+
+  
