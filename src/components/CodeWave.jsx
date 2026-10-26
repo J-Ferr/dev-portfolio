@@ -7,6 +7,7 @@ function CodeWave() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let animationId;
     let time = 0;
@@ -31,7 +32,8 @@ function CodeWave() {
 
       codeSnippets.forEach((snippet, rowIndex) => {
         const characters = (snippet + ' ').split('');
-        const baseY = 65 + rowIndex * 60;
+        const rowSpacing = height / (codeSnippets.length + 1);
+        const baseY = rowSpacing * (rowIndex + 1);
 
         const spacing = 12;
         const repeatWidth = characters.length * spacing;
@@ -59,9 +61,10 @@ function CodeWave() {
       });
       ctx.globalAlpha = 1;
 
-      time += 0.05;
-
-      animationId = requestAnimationFrame(animate);
+      if (!prefersReducedMotion) {
+        time += 0.03;
+        animationId = requestAnimationFrame(animate);
+      }
     }
 
     function resizeCanvas() {
@@ -87,7 +90,11 @@ function CodeWave() {
 
   return (
     <div className="code-wave">
-      <canvas ref={canvasRef} className="code-canvas" />
+      <canvas
+      ref={canvasRef}
+      className="code-canvas"
+      aria-hidden="true"
+      />
     </div>
   );
 }

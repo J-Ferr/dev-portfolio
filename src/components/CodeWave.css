@@ -4,6 +4,12 @@
     height: 400px;
 }
 
+@media (max-width: 768px) {
+    .code-canvas {
+        height: 300px;
+    }
+}
+
 .code-wave {
     background-color: #091510;
     width: 100%;
