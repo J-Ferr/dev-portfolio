@@ -1,6 +1,7 @@
 import './App.css';
 import heroImage from './assets/hero.png';
 import CodeWave from './components/CodeWave';
+import Projects from './components/Projects';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <CodeWave />
         </div>
       </section>
+      <Projects />
     </>
   )
 }
