@@ -1,4 +1,5 @@
 import './Projects.css';
+import ProjectCard from './ProjectCard';
 
 function Projects() {
     return (
@@ -9,13 +10,30 @@ function Projects() {
             </p>
 
             <div className="projects-grid">
-                <article className="project-card">
-                    <h3>Mood Reflection App</h3>
-                    <p>
-                        A full-stack application that allows users to track and reflect on their moods over time.
-                    </p>
-                    <span>React · Express · PostgreSQL</span>
-                </article>
+                <ProjectCard
+                    title="Mood Reflection App"
+                    description="A full-stack application that allows users to track 
+                    and reflect on their moods over time."
+                    technologies="React · Express · PostgreSQL"
+                    liveUrl="https://mood-reflection-frontend.onrender.com"
+                    githubUrl="https://github.com/J-Ferr/mood-reflection-app"
+                />
+
+                <ProjectCard
+                    title="Task Manager App"
+                    description="A full-stack productivity application for managing tasks,
+                    priorities, and deadlines."
+                    technologies="React · Node.js · Express · PostgreSQL"
+                    githubUrl="https://github.com/J-Ferr/task-manager-app"
+                />
+
+                <ProjectCard
+                    title="E-Commerce Backend API"
+                    description="A REST API with user authentication, 
+                    product management, and order processing for an e-commerce platform."
+                    technologies="Node.js · Express · PostgreSQL · JWT"
+                    githubUrl="https://github.com/J-Ferr/ecom-api"
+                />
             </div>
         </section>
     );

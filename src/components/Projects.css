@@ -50,7 +50,7 @@
 }
 
 .project-card span {
-  color: #42745a;
+  color: #61ad81;
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -63,4 +63,35 @@
   .projects {
     padding: 60px 6%;
   }
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  color: #ffffff;
+  background-color: #173e30;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #2d6248;
+}
+
+.project-links a:focus-visible {
+  outline: 2px solid #173e30;
+  outline-offset: 3px;
 }
