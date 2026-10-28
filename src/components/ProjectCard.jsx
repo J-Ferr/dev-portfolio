@@ -3,14 +3,23 @@ import { ExternalLink, CodeXml } from 'lucide-react';
 function ProjectCard({ 
     title, 
     description, 
-    technologies, 
+    technologies,
+    image, 
     liveUrl, 
     githubUrl 
 }) {
     return (
         <article className="project-card">
-            <h3>{title}</h3>
-            <p>{description}</p>
+            {image && (
+                <img 
+                  src={image} 
+                  alt={`${title} application screenshot`}
+                  className="project-image" 
+                />
+            )}
+            <div className="project-content">
+                <h3>{title}</h3>
+                <p>{description}</p>
             <span>{technologies}</span>
 
             <div className="project-links">
@@ -24,6 +33,7 @@ function ProjectCard({
                         GitHub <CodeXml size={15} />
                     </a>
                 )}
+              </div>
             </div>
         </article>
     );

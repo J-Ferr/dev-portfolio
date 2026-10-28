@@ -1,5 +1,7 @@
 import './Projects.css';
 import ProjectCard from './ProjectCard';
+import moodReflectionImage from '../assets/projects/mood-reflection.png';
+
 
 function Projects() {
     return (
@@ -15,6 +17,7 @@ function Projects() {
                     description="A full-stack application that allows users to track 
                     and reflect on their moods over time."
                     technologies="React · Express · PostgreSQL"
+                    image={moodReflectionImage}
                     liveUrl="https://mood-reflection-frontend.onrender.com"
                     githubUrl="https://github.com/J-Ferr/mood-reflection-app"
                 />
