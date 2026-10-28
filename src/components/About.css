@@ -1,0 +1,79 @@
+.about {
+  background-color: var(--color-background);
+  padding: 70px 8%;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-label {
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.about-text h2 {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 18px 0 24px;
+}
+
+.about-text p {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-strengths {
+  background-color: var(--color-sage);
+  padding: 36px;
+  border-radius: 16px;
+}
+
+.about-strengths h3 {
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+}
+
+.strength-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--color-text);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.strength-item svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.strength-item:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 6%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+}

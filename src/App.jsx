@@ -2,6 +2,7 @@ import './App.css';
 import heroImage from './assets/hero.png';
 import CodeWave from './components/CodeWave';
 import Projects from './components/Projects';
+import About from './components/About';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <CodeWave />
         </div>
       </section>
+      <About />
       <Projects />
     </>
   )
