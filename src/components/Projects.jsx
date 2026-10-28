@@ -1,6 +1,8 @@
 import './Projects.css';
 import ProjectCard from './ProjectCard';
 import moodReflectionImage from '../assets/projects/mood-reflection.png';
+import taskManagerImage from '../assets/projects/task-manager.png';
+import ecomApiImage from '../assets/projects/e-comm.png';
 
 
 function Projects() {
@@ -27,6 +29,7 @@ function Projects() {
                     description="A full-stack productivity application for managing tasks,
                     priorities, and deadlines."
                     technologies="React · Node.js · Express · PostgreSQL"
+                    image={taskManagerImage}
                     githubUrl="https://github.com/J-Ferr/task-manager-app"
                 />
 
@@ -35,6 +38,7 @@ function Projects() {
                     description="A REST API with user authentication, 
                     product management, and order processing for an e-commerce platform."
                     technologies="Node.js · Express · PostgreSQL · JWT"
+                    image={ecomApiImage} 
                     githubUrl="https://github.com/J-Ferr/ecom-api"
                 />
             </div>

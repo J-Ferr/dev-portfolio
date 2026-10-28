@@ -1,6 +1,6 @@
 .projects {
     padding: 80px 8%;
-    background-color: #f5f3eb;
+    background-color: #c5d0c3;
     text-align: center;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .project-card h3 {
-  color: #173e30;
+  color: var(--color-primary);
   font-size: 1.3rem;
   margin-bottom: 12px;
 }
