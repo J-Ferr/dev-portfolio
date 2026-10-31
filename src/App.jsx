@@ -3,6 +3,7 @@ import heroImage from './assets/hero.png';
 import CodeWave from './components/CodeWave';
 import Projects from './components/Projects';
 import About from './components/About';
+import Skills from './components/Skills';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         </div>
       </section>
       <About />
+      <Skills />
       <Projects />
     </>
   )
