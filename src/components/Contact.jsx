@@ -11,8 +11,10 @@ function Contact() {
                 <h2>Let's build something together.</h2>
 
                 <p>
-                    I'm open to junior software engineer opportunities and would 
-                    love to connect with teams building thoughtful digital experiences.
+                    I'm always excited to connect with people who share a love for 
+                    technology, creativity, and building something meaningful. 
+                    Whether it's a new opportunity, a collaboration, or simply a 
+                    conversation, I'd love to hear from you.
                 </p>
 
                 <a className="contact-button" href="mailto:arellano.ferrara1@gmail.com">

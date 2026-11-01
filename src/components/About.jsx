@@ -1,5 +1,5 @@
 import './About.css';
-import { Code2, Lightbulb, Users, BookOpen } from 'lucide-react';
+import { Code2, Lightbulb, Users, BookOpen, Palette } from 'lucide-react';
 
 function About() {
     return (
@@ -12,22 +12,23 @@ function About() {
                     <h2>Building with purpose. Creating with curiosity.</h2>
 
                     <p>
-                        I'm a software developer with a background in retail
-                        leadership and passion for turning ideas into functional 
-                        user-focused applications. I enjoy learning new technologies 
-                        and applying them to solve real-world problems.
+                        I'm a software developer who enjoys both the problem-solving and creative sides of coding.
+                        There's something rewarding about working through a challenge, imrpoving
+                        how something functions, and seeing it all come together visually.
                     </p>
 
                     <p>
-                        Through hands-on projects, I've gained experience developing
-                        full-stack applications using React, JavaScript, Node.js, Express,
-                         and PostgreSQL.
+                        With a background in retail leadership, I've developed strong skills in
+                        collaboration, adaptability, and finind solutions in fast-paced environments.
+                        I've carried those experiences into software development, where I continue to
+                        learn and build full-stack applications using React, JavaScript,Node.js, Express,
+                        and PostgreSQL.
                     </p>
 
                     <p>
-                        I bring technical curiosity, creative thinking, and years of 
-                        experience collaborating with teams and solving problems in 
-                        fast-paced environments.
+                        What I enjot most is the process of creating and refining - from figuring
+                        ouot the logic behind an application to experimenting with layouts, colors, 
+                        and small details that make the final experience feel complete.
                     </p>
                 </div>
 
@@ -39,12 +40,12 @@ function About() {
                         <span>Full-Stack Development</span>
                     </div>
                     <div className="strength-item">
-                        <Lightbulb size={20} />
-                        <span>Creative Problem-Solving</span>
+                        <Palette size={20} />
+                        <span>Creative & Visual Thinking</span>
                     </div>
                     <div className="strength-item">
                         <Users size={20} />
-                        <span>Team Collaboration</span>
+                        <span>Team Collaboration & Leadership</span>
                     </div>
                     <div className="strength-item">
                         <BookOpen size={20} />
