@@ -16,8 +16,8 @@
   align-items: center;
   gap: 40px;
 
-  padding: 80px 10%;
-  min-height: 60vh;
+  padding: 70px 10% 80px;
+  min-height: auto;
 }
 
 .hero-text {
@@ -38,11 +38,18 @@
 }
 
 .hero-greeting {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 4px;
   color: var(--color-secondary);
   margin-bottom: 8px;
+}
+
+.hero-text p:not(.hero-greeting) {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-top: 16px;
 }
 
 
