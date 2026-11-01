@@ -5,6 +5,7 @@ function ProjectCard({
     description, 
     technologies,
     image, 
+    imageAlt,
     liveUrl, 
     githubUrl 
 }) {
@@ -13,7 +14,7 @@ function ProjectCard({
             {image && (
                 <img 
                   src={image} 
-                  alt={`${title} application screenshot`}
+                  alt={imageAlt || `${title} project illustration`}
                   className="project-image" 
                 />
             )}

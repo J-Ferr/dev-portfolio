@@ -24,6 +24,7 @@ function Projects() {
                     dashboard."
                     technologies="React · Express · PostgreSQL"
                     image={moodReflectionImage}
+                    imageAlt="Illustration of mood tracking dashboard with daily reflection and mood insights"
                     liveUrl="https://mood-reflection-frontend.onrender.com"
                     githubUrl="https://github.com/J-Ferr/mood-reflection-app"
                 />
@@ -35,6 +36,7 @@ function Projects() {
                     that makes tracking progress easier."
                     technologies="React · Node.js · Express · PostgreSQL"
                     image={taskManagerImage}
+                    imageAlt="Illustration representing a task management dashboard with tasks, priorities, and progress tracking"
                     githubUrl="https://github.com/J-Ferr/task-manager-app"
                 />
 
@@ -45,6 +47,7 @@ function Projects() {
                     for managing products and orders."
                     technologies="Node.js · Express · PostgreSQL · JWT"
                     image={ecomApiImage} 
+                    imageAlt="Illustration representing an e-commerce backend with API endpoints and database connections"
                     githubUrl="https://github.com/J-Ferr/ecom-api"
                 />
             </div>
