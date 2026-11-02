@@ -31,7 +31,7 @@ function Contact() {
                         <BriefcaseBusiness size={20} />
                         <span>LinkedIn</span>
                     </a>
-                    <a href="./JA-Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-link">
+                    <a href="/JAF-Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-link">
                         <FileText size={20} />
                         <span>View Résumé</span>
                     </a>
