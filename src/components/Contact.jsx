@@ -1,5 +1,5 @@
 import './Contact.css';
-import { Mail, CodeXml, BriefcaseBusiness } from 'lucide-react';
+import { Mail, CodeXml, BriefcaseBusiness, FileText } from 'lucide-react';
 
 function Contact() {
     return(
@@ -30,6 +30,10 @@ function Contact() {
                     <a href="https://www.linkedin.com/in/jaaferrara" target="_blank" rel="noopener noreferrer">
                         <BriefcaseBusiness size={20} />
                         <span>LinkedIn</span>
+                    </a>
+                    <a href="./JA-Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-link">
+                        <FileText size={20} />
+                        <span>View Résumé</span>
                     </a>
                 </div>
 
