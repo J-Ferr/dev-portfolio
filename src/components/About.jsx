@@ -13,21 +13,21 @@ function About() {
 
                     <p>
                         I'm a software developer who enjoys both the problem-solving and creative sides of coding.
-                        There's something rewarding about working through a challenge, imrpoving
+                        There's something rewarding about working through a challenge, improving
                         how something functions, and seeing it all come together visually.
                     </p>
 
                     <p>
                         With a background in retail leadership, I've developed strong skills in
-                        collaboration, adaptability, and finind solutions in fast-paced environments.
+                        collaboration, adaptability, and find solutions in fast-paced environments.
                         I've carried those experiences into software development, where I continue to
                         learn and build full-stack applications using React, JavaScript,Node.js, Express,
                         and PostgreSQL.
                     </p>
 
                     <p>
-                        What I enjot most is the process of creating and refining - from figuring
-                        ouot the logic behind an application to experimenting with layouts, colors, 
+                        What I enjoy most is the process of creating and refining - from figuring
+                        out the logic behind an application to experimenting with layouts, colors, 
                         and small details that make the final experience feel complete.
                     </p>
                 </div>
