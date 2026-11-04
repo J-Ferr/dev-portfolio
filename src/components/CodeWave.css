@@ -1,7 +1,7 @@
 .code-canvas {
     display:block;
     width: 100%;
-    height: 400px;
+    height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -42,5 +42,11 @@
 @media (prefers-reduced-motion: reduce) {
     .code-wave code {
         animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .code-wave {
+        height: 220px;
     }
 }

@@ -58,6 +58,17 @@
   .hero-section {
     flex-direction: column;
     padding: 40px 20px;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
