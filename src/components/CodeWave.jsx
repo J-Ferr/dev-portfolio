@@ -96,17 +96,27 @@ function CodeWave() {
         }
       });
       ctx.globalAlpha = 1;
-      ctx.beginPath();
-      ctx.moveTo(0, waveY(0));
-
-      for (let x = 1; x < width; x +=4) {
-        ctx.lineTo(x, waveY(x));
-      }
       
-      ctx.lineTo(width, waveY(width));
-      ctx.strokeStyle = '#355cff';
-      ctx.lineWidth = 4;
-      ctx.stroke();
+      function drawWave(offset, lineWidth, opacity) {
+        ctx.beginPath();
+        ctx.moveTo(0, waveY(0) + offset);
+
+        for (let x = 4; x <= width; x += 4) {
+          ctx.lineTo(x, waveY(x) + offset);
+        }
+
+        ctx.lineTo(width, waveY(width) + offset);
+        ctx.strokeStyle = '#355cff';
+        ctx.lineWidth = lineWidth;
+        ctx.globalAlpha = opacity;
+        ctx.stroke();
+      }
+
+      drawWave(-20,1, 0.14);
+      drawWave(-8, 1, 0.26);
+      drawWave(8, 1, 0.26);
+      drawWave(20, 1, 0.14);
+      drawWave(0, 4,1);
 
       if (!prefersReducedMotion) {
         time += 0.03;
