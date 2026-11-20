@@ -56,7 +56,11 @@ function CodeWave() {
         const rise = progress * progress * (3 - 2 * progress);
         const dip = Math.sin(progress * Math.PI) * 0.32;
 
-        const restingY = height * (0.72 + dip - rise * 0.54);
+        const wavelength = Math.PI * 2 * 1.25;
+        const phase = progress * wavelength - time * 1.2;
+        const amplitude = 6 + Math.sin(progress * Math.PI) * 18;
+        const idleDrift = Math.sin(phase) * amplitude;
+        const restingY = height * (0.72 + dip - rise * 0.54) + idleDrift;
         const distance = Math.hypot(x - pointerX, restingY - pointerY);
         const influence = Math.max(0, 1 - distance / 180);
         const pullY = Math.max(-36, Math.min(36, pointerY - restingY));
