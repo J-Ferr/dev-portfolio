@@ -12,6 +12,24 @@ function CodeWave() {
     let animationId;
     let time = 0;
 
+    let pointerX = 0;
+    let pointerY = 0;
+    let targetPull = 0;
+    let pull = 0;
+
+    function handlePointerMove(event) {
+      if (event.pointerType === 'touch' || prefersReducedMotion) return;
+
+      const rect = canvas.getBoundingClientRect();
+      pointerX = event.clientX - rect.left;
+      pointerY = event.clientY - rect.top;
+      targetPull = 1;
+    }
+
+    function handlePointerLeave() {
+      targetPull = 0;
+    }
+
     const codeSnippets = [
       'const creativity = imagination + logic;',
       'function buildDreams() { return possibilities }',
@@ -21,18 +39,29 @@ function CodeWave() {
       'def create_art(inspiration): return imagination'
     ];
 
+    canvas.addEventListener('pointermove', handlePointerMove);
+    canvas.addEventListener('pointerleave', handlePointerLeave);
+ 
+
     function animate() {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
 
       ctx.clearRect(0, 0, width, height);
 
+      pull += (targetPull - pull) * 0.12;
+
       function waveY(x) {
         const progress = Math.max(0, Math.min(1, x / width));
         const rise = progress * progress * (3 - 2 * progress);
         const dip = Math.sin(progress * Math.PI) * 0.32;
 
-        return height * (0.72 + dip - rise * 0.54);
+        const restingY = height * (0.72 + dip - rise * 0.54);
+        const distance = Math.hypot(x - pointerX, restingY - pointerY);
+        const influence = Math.max(0, 1 - distance / 180);
+        const pullY = Math.max(-36, Math.min(36, pointerY - restingY));
+
+        return restingY + pullY * influence * pull;
       }
 
       ctx.font = '14px monospace';
@@ -99,6 +128,8 @@ function CodeWave() {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('pointermove', handlePointerMove);
+      canvas.removeEventListener('pointerleave', handlePointerLeave);
     };
   }, []);
 
