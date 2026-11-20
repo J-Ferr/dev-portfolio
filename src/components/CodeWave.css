@@ -4,22 +4,10 @@
     height: 100%;
 }
 
-@media (max-width: 768px) {
-    .code-canvas {
-        height: 300px;
-    }
-}
 
 .code-wave {
-    background-color: #091510;
     width: 100%;
-    min-height: 350px;
-    border-radius: 16px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    height: 100%;
     overflow: hidden;
 }
 
@@ -42,11 +30,5 @@
 @media (prefers-reduced-motion: reduce) {
     .code-wave code {
         animation: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .code-wave {
-        height: 220px;
     }
 }

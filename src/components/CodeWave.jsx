@@ -27,13 +27,19 @@ function CodeWave() {
 
       ctx.clearRect(0, 0, width, height);
 
+      function waveY(x) {
+        const progress = Math.max(0, Math.min(1, x / width));
+        const rise = progress * progress * (3 - 2 * progress);
+        const dip = Math.sin(progress * Math.PI) * 0.32;
+
+        return height * (0.72 + dip - rise * 0.54);
+      }
+
       ctx.font = '14px monospace';
       ctx.fillStyle = '#9FE6B8';
 
-      codeSnippets.forEach((snippet, rowIndex) => {
+      codeSnippets.slice(0, 2).forEach((snippet, rowIndex) => {
         const characters = (snippet + ' ').split('');
-        const rowSpacing = height / (codeSnippets.length + 1);
-        const baseY = rowSpacing * (rowIndex + 1);
 
         const spacing = 12;
         const repeatWidth = characters.length * spacing;
@@ -51,15 +57,23 @@ function CodeWave() {
           characters.forEach((character, charIndex) => {
             const x = copy * repeatWidth + charIndex * spacing - offset;
 
-            const wave = Math.sin(
-              x * 0.025 + time + rowIndex * 0.8) * 30;
-
-            const y = baseY + wave;
+            const y = waveY(x) + (rowIndex === 0 ? -12 : 22);
             ctx.fillText(character, x, y);
           });
         }
       });
       ctx.globalAlpha = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, waveY(0));
+
+      for (let x = 1; x < width; x +=4) {
+        ctx.lineTo(x, waveY(x));
+      }
+      
+      ctx.lineTo(width, waveY(width));
+      ctx.strokeStyle = '#355cff';
+      ctx.lineWidth = 4;
+      ctx.stroke();
 
       if (!prefersReducedMotion) {
         time += 0.03;
