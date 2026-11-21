@@ -9,6 +9,8 @@ function CodeWave() {
     const ctx = canvas.getContext('2d');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    const entranceStart = performance.now();
+
     let animationId;
     let time = 0;
 
@@ -49,15 +51,26 @@ function CodeWave() {
 
       ctx.clearRect(0, 0, width, height);
 
+      const elapsed = performance.now() - entranceStart;
+
+      function revealWidth(delay) {
+        if (prefersReducedMotion) return width;
+
+        const progress = Math.max(0, Math.min(1, (elapsed - 450 - delay) / 1000));
+        const eased = progress * progress * (3 - 2 * progress);
+
+        return width * eased;
+      }
+
       pull += (targetPull - pull) * 0.12;
 
-      function waveY(x) {
+      function waveY(x, phaseOffset = 0) {
         const progress = Math.max(0, Math.min(1, x / width));
         const rise = progress * progress * (3 - 2 * progress);
         const dip = Math.sin(progress * Math.PI) * 0.32;
 
         const wavelength = Math.PI * 2 * 1.25;
-        const phase = progress * wavelength - time * 1.2;
+        const phase = progress * wavelength - time * 1.2 + phaseOffset;
         const amplitude = 6 + Math.sin(progress * Math.PI) * 18;
         const idleDrift = Math.sin(phase) * amplitude;
         const restingY = height * (0.72 + dip - rise * 0.54) + idleDrift;
@@ -69,7 +82,12 @@ function CodeWave() {
       }
 
       ctx.font = '14px monospace';
-      ctx.fillStyle = '#9FE6B8';
+      ctx.fillStyle = '#526a94';
+      
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, 0, revealWidth(0), height);
+      ctx.clip();
 
       codeSnippets.slice(0, 2).forEach((snippet, rowIndex) => {
         const characters = (snippet + ' ').split('');
@@ -95,28 +113,32 @@ function CodeWave() {
           });
         }
       });
+      ctx.restore();
       ctx.globalAlpha = 1;
       
-      function drawWave(offset, lineWidth, opacity) {
-        ctx.beginPath();
-        ctx.moveTo(0, waveY(0) + offset);
+      function drawWave(offset, lineWidth, opacity, phaseOffset = 0, delay = 0) {
+        const endX = revealWidth(delay);
+        if (endX <= 0) return;
 
-        for (let x = 4; x <= width; x += 4) {
-          ctx.lineTo(x, waveY(x) + offset);
+        ctx.beginPath();
+        ctx.moveTo(0, waveY(0, phaseOffset) + offset);
+
+        for (let x = 4; x <= endX; x += 4) {
+          ctx.lineTo(x, waveY(x, phaseOffset) + offset);
         }
 
-        ctx.lineTo(width, waveY(width) + offset);
-        ctx.strokeStyle = '#355cff';
+        ctx.lineTo(endX, waveY(endX, phaseOffset) + offset);
         ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = '#355cff';
         ctx.globalAlpha = opacity;
         ctx.stroke();
       }
 
-      drawWave(-20,1, 0.14);
-      drawWave(-8, 1, 0.26);
-      drawWave(8, 1, 0.26);
-      drawWave(20, 1, 0.14);
-      drawWave(0, 4,1);
+      drawWave(-20, 1, 0.14, -0.9, 300);
+      drawWave(-8, 1, 0.26, -0.45, 100);
+      drawWave(8, 1, 0.26, 0.45, 200);
+      drawWave(20, 1, 0.14, 0.9, 400);
+      drawWave(0, 4, 1);
 
       if (!prefersReducedMotion) {
         time += 0.03;

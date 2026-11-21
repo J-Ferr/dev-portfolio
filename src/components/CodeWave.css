@@ -13,7 +13,7 @@
 
 .code-wave code {
     display: inline-block;
-    color: #9fe6b8;
+    color: #526a94;
     font-family: monospace;
     animation: floatCode 1s ease-in-out infinite;
 }
