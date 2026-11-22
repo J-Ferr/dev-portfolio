@@ -104,6 +104,12 @@
   }
 }
 
+@media (769px <= width < 1200px) and (orientation:portrait) {
+  .hero-section {
+    min-height: 75svh;
+  }
+}
+
 @media (min-width: 1200px) {
   .hero-section {
     min-height: 90svh;
