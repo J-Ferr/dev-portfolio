@@ -103,6 +103,12 @@
     height: 65%;
   }
 }
+
+@media (min-width: 1200px) {
+  .hero-section {
+    min-height: 90svh;
+  }
+} 
 /* Animation for hero section */
 @media (prefers-reduced-motion: no-preference) {
   .hero-text {
