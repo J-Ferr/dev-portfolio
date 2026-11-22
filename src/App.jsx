@@ -23,9 +23,9 @@ function App() {
           <CodeWave />
           </div>
         </section>
+        <Projects />
         <About />
         <Skills />
-        <Projects />
         <Contact />
       </main>
 

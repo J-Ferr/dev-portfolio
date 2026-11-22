@@ -1,5 +1,5 @@
 .projects {
-    padding: 80px 8%;
+    padding: 64px 8%;
     background-color: #c5d0c3;
     text-align: center;
 }
@@ -7,7 +7,7 @@
 .projects h2 {
     color:  #173e30;
     font-size: 2.5rem;
-    margin-bottom: 16px;
+    margin: 0;
 }
 
 .projects p {
@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 24px;
   text-align: left;
 }
 
@@ -96,6 +96,14 @@
 .project-links a:focus-visible {
   outline: 2px solid #173e30;
   outline-offset: 3px;
+}
+
+.project-links .project-demo-link {
+  background-color: #355cff;
+}
+
+.project-links .project-demo-link:hover {
+  background-color: #2445d9;
 }
 
 .project-image {

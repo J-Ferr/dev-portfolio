@@ -8,12 +8,8 @@ import ecomApiImage from '../assets/projects/e-comm.png';
 function Projects() {
     return (
         <section className="projects" id="projects">
-            <h2>Featured Projects</h2>
-            <p>
-                A collection of projects where I've explored new ideas, 
-                strengthened my skills, and turned what I've learned into 
-                working applications.
-            </p>
+            <h2>Selected Work</h2>
+            
 
             <div className="projects-grid">
                 <ProjectCard

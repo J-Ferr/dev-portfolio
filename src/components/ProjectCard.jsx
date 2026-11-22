@@ -25,7 +25,7 @@ function ProjectCard({
 
             <div className="project-links">
                 {liveUrl && (
-                    <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                    <a className="project-demo-link" href={liveUrl} target="_blank" rel="noopener noreferrer">
                         Live Demo <ExternalLink size={15} />
                     </a>
                 )}
