@@ -56,7 +56,7 @@ function CodeWave() {
       function revealWidth(delay) {
         if (prefersReducedMotion) return width;
 
-        const progress = Math.max(0, Math.min(1, (elapsed - 450 - delay) / 1000));
+        const progress = Math.max(0, Math.min(1, (elapsed - 450 - delay) / 700));
         const eased = progress * progress * (3 - 2 * progress);
 
         return width * eased;
@@ -67,13 +67,15 @@ function CodeWave() {
       function waveY(x, phaseOffset = 0) {
         const progress = Math.max(0, Math.min(1, x / width));
         const rise = progress * progress * (3 - 2 * progress);
-        const dip = Math.sin(progress * Math.PI) * 0.32;
+        const envelope = Math.sin(progress * Math.PI);
+        const dip = envelope * 0.08;
 
-        const wavelength = Math.PI * 2 * 1.25;
-        const phase = progress * wavelength - time * 1.2 + phaseOffset;
-        const amplitude = 6 + Math.sin(progress * Math.PI) * 18;
+        const rippleCycles = 1.75;
+        const phase = progress * Math.PI * 2 * rippleCycles - time * 0.65 + phaseOffset;
+        const amplitude = Math.min(42, height * 0.17) * envelope;
         const idleDrift = Math.sin(phase) * amplitude;
-        const restingY = height * (0.72 + dip - rise * 0.54) + idleDrift;
+        const restingY = height * (0.85 + dip - rise * 0.72) + idleDrift;
+
         const distance = Math.hypot(x - pointerX, restingY - pointerY);
         const influence = Math.max(0, 1 - distance / 180);
         const pullY = Math.max(-36, Math.min(36, pointerY - restingY));
@@ -82,7 +84,7 @@ function CodeWave() {
       }
 
       ctx.font = '14px monospace';
-      ctx.fillStyle = '#526a94';
+      ctx.fillStyle = '#789dbe';
       
       ctx.save();
       ctx.beginPath();
@@ -134,10 +136,11 @@ function CodeWave() {
         ctx.stroke();
       }
 
-      drawWave(-20, 1, 0.14, -0.9, 300);
-      drawWave(-8, 1, 0.26, -0.45, 100);
-      drawWave(8, 1, 0.26, 0.45, 200);
-      drawWave(20, 1, 0.14, 0.9, 400);
+      drawWave(-20, 1, 0.32, -0.9, 700);
+      drawWave(-8, 1, 0.42, -0.45, 1400);
+      drawWave(8, 1, 0.42, 0.45, 2100);
+      drawWave(20, 1, 0.32, 0.9, 2800);
+      drawWave(-32, 1, 0.28, -1.35, 3500);
       drawWave(0, 4, 1);
 
       if (!prefersReducedMotion) {
