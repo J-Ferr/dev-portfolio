@@ -1,5 +1,5 @@
 .about {
-  background-color: var(--color-sage);
+  background-color: #f4f7f5;
   padding: 70px 8%;
 }
 
@@ -13,34 +13,34 @@
 }
 
 .about-label {
-  color: var(--color-secondary);
+  color: #034748;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
 .about-text h2 {
-  color: var(--color-primary);
+  color: #00111c;
   font-size: 2.5rem;
   line-height: 1.2;
   margin: 18px 0 24px;
 }
 
 .about-text p {
-  color: var(--color-text);
+  color: #294150;
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 16px;
 }
 
 .about-strengths {
-  background-color: var(--color-sage);
+  background-color: #034748;
   padding: 36px;
   border-radius: 16px;
 }
 
 .about-strengths h3 {
-  color: var(--color-primary);
+  color: #f4f7f5;
   font-size: 1.4rem;
   margin-bottom: 24px;
 }
@@ -49,13 +49,13 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  color: var(--color-text);
+  color: #f4f7f5;
   padding: 14px 0;
-  border-bottom: 1px solid var(--color-secondary);
+  border-bottom: 1px solid #397071;
 }
 
 .strength-item svg {
-    color: var(--color-primary);
+    color: #c8f26a;
     flex-shrink: 0;
 }
 

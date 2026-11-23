@@ -10,7 +10,7 @@ function Contact() {
 
                 <h2>Let's build something together.</h2>
 
-                <p>
+                <p className="contact-intro">
                     I'm always excited to connect with people who share a love for 
                     technology, creativity, and building something meaningful. 
                     Whether it's a new opportunity, a collaboration, or simply a 
@@ -33,7 +33,7 @@ function Contact() {
                     </a>
                     <a href="/JAF-Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-link">
                         <FileText size={20} />
-                        <span>View Résumé</span>
+                        <span>View Resume</span>
                     </a>
                 </div>
 

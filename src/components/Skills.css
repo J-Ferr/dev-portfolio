@@ -1,5 +1,5 @@
 .skills-section {
-    background-color: var(--color-background);
+    background-color: #034748;
     padding: 80px 8%;
 }
 
@@ -16,38 +16,38 @@
 }
 
 .skills-label {
-    color: var(--color-secondary);
+    color: #c5deda;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 .skills-container h2 {
-    color: var(--color-primary);
+    color: #f4f7f5;
     font-size: 2.5rem;
     margin: 16px 0;
 }
 
 .skills-intro {
-    color: var(--color-text);
+    color: #c5deda;
     line-height: 1.7;
     max-width: 600px;
 }
 
 .skill-card {
-    background-color: #fff;
+    background-color: #023638;
     padding: 32px;
     border-radius: 16px;
-    border: 1px solid rgba(48, 75, 61, 0.08);
+    border: 1px solid #397071;
 }
 
 .skill-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(48, 75, 61, 0.1);
+    box-shadow: 0 12px 28px rgba(0, 17, 28, 0.25);
 }
 
 .skill-card h3 {
-    color: var(--color-primary);
+    color: #f4f7f5;
     font-size: 1.3rem;
     margin-bottom: 24px;
 }
@@ -57,7 +57,7 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 24px;
-    color: var(--color-primary);
+    color: #c8f26a;
 }
 .skill-card-heading h3 {
     margin-bottom: 0;
@@ -70,8 +70,8 @@
 }
 
 .skill-tag {
-    background-color: var(--color-background);
-    color: var(--color-primary);
+    background-color: #034748;
+    color: #c5deda;
     padding: 8px 12px;
     border-radius: 8px;
     font-size: 0.85rem;

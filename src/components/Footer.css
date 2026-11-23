@@ -1,12 +1,13 @@
 .footer {
-    background-color: var(--color-primary);
-    color: #fff;
+    background-color: #00111c;
+    color: #a8c4bf;
+    border-top: 1px solid #034748;
     text-align: center;
     padding: 24px 8%;
 }
 
 .footer p {
+    color: inherit;
     font-size: 0.9rem;
     margin: 0;
-    opacity: 0.8;
 }

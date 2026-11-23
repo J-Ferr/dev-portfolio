@@ -1,6 +1,6 @@
 /* Contact Section */
 .contact-section {
-    background-color: var(--color-background);
+    background-color: #00111c;
     padding: 100px 8%;
     text-align: center;
 }
@@ -11,20 +11,20 @@
 }
 
 .contact-label {
-    color: var(--color-secondary);
+    color: #a8c4bf;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 .contact-container h2 {
-    color: var(--color-primary);
+    color: #f4f7f4;
     font-size: clamp(2rem, 4vw, 3rem);
     margin: 18px 0 24px;
 }
 
 .contact-intro {
-    color: var(--color-text);
+    color: #c9dce9;
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 32px;
@@ -36,8 +36,8 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: var(--color-primary);
-    color: #fff;
+    background-color: #c8f26a;
+    color: #00111c;
     padding: 14px 28px;
     border-radius: 10px;
     font-weight: 600;
@@ -46,7 +46,7 @@
 }
 
 .contact-button:hover {
-    background-color: var(--color-secondary);
+    background-color: #d9fa95;
     transform: translateY(-3px);
 }
 
@@ -63,14 +63,14 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--color-primary);
+    color: #f4f7f5;
     font-weight: 500;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.contacts-socials a:hover {
-    color: var(--color-secondary);
+.contact-socials a:hover, .contact-socials a:focus-visible {
+    color: #c8f26a
 }
 
 /* mobile friendly adjustments */
