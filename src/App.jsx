@@ -14,7 +14,12 @@ function App() {
         <section className='hero-section'>
           <div className="hero-text">
             <p className="hero-greeting">HELLO, I'M</p>
-            <h1>Jose Armando Arellano Ferrara</h1>
+            <h1 className='hero-name'>
+              <span>Jose</span>{' '}
+              <span>Armando</span>{' '}
+              <span>Arellano</span>{' '}
+              <span>Ferrara</span>
+            </h1>
               <h2>Junior Software Engineer</h2>
                 <p>I build intuitive, purposeful web applications that bring ideas to life.</p>
           </div>
