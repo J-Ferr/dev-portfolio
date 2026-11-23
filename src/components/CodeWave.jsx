@@ -84,7 +84,7 @@ function CodeWave() {
       }
 
       ctx.font = '14px monospace';
-      ctx.fillStyle = '#789dbe';
+      ctx.fillStyle = '#a8c4bf';
       
       ctx.save();
       ctx.beginPath();
@@ -131,7 +131,7 @@ function CodeWave() {
 
         ctx.lineTo(endX, waveY(endX, phaseOffset) + offset);
         ctx.lineWidth = lineWidth;
-        ctx.strokeStyle = '#355cff';
+        ctx.strokeStyle = '#c8f26a';
         ctx.globalAlpha = opacity;
         ctx.stroke();
       }

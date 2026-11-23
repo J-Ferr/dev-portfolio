@@ -22,6 +22,8 @@
   padding: 70px 10% 80px;
   min-height: 100svh;
   box-sizing: border-box;
+  background-color: #00111c;
+  color: #f4f7f5;
 }
 
 .hero-text {
@@ -31,13 +33,13 @@
 
 .hero-text h1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  color: var(--color-primary);
+  color: inherit;
   margin-bottom: 16px;
 }
 
 .hero-text h2 {
   font-size: 1.4rem;
-  color: var(--color-secondary);
+  color: inherit;
   margin-bottom: 16px;
 }
 
@@ -45,7 +47,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 4px;
-  color: var(--color-secondary);
+  color: inherit;
   margin-bottom: 8px;
 }
 
@@ -101,7 +103,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-name > svg > path {
-    stroke: #355cff;
+    stroke: #c8f26a;
     stroke-width: 1.5;
     stroke-dasharray: 1;
     animation: hero-name-trace 560ms ease-in-out var(--word-delay) both;
@@ -190,10 +192,6 @@
   .hero-text {
     animation: hero-intro-in 400ms ease-out both;
   }
-
-  .hero-section > .hero {
-    animation: hero-wave-in 1100ms ease-out 450ms both;
-  }
 }
 
 @keyframes hero-intro-in {
@@ -208,13 +206,4 @@
   }
 }
 
-@keyframes hero-wave-in {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  to {
-    clip-path: inset(0);
-  }
-}
   
