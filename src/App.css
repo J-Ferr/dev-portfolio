@@ -82,6 +82,51 @@
   }
 }
 
+/* Wordmark animation */
+.hero-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.24em;
+  row-gap: 0.12em;
+}
+
+.hero-name > svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-name > svg > path {
+    stroke: #355cff;
+    stroke-width: 1.5;
+    stroke-dasharray: 1;
+    animation: hero-name-trace 560ms ease-in-out var(--word-delay) both;
+  }
+}
+
+@keyframes hero-name-trace {
+  from {
+    stroke-dashoffset: 1;
+    fill: transparent;
+  }
+
+  75% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+    fill: transparent;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    stroke-opacity: 0;
+    fill: currentColor;
+  }
+}
+
 /* Media query for responsive design */
 @media (max-width: 768px) {
   .hero-section {

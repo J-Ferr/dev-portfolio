@@ -56,7 +56,7 @@ function CodeWave() {
       function revealWidth(delay) {
         if (prefersReducedMotion) return width;
 
-        const progress = Math.max(0, Math.min(1, (elapsed - 650 - delay) / 700));
+        const progress = Math.max(0, Math.min(1, (elapsed - 900 - delay) / 700));
         const eased = progress * progress * (3 - 2 * progress);
 
         return width * eased;
