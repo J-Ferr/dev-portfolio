@@ -7,7 +7,7 @@ import ecomApiImage from '../assets/projects/e-comm.png';
 
 function Projects() {
     return (
-        <section className="projects" id="projects">
+        <section className="projects" id="work">
             <h2>Selected Work</h2>
             
 

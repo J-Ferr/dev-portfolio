@@ -11,6 +11,14 @@ function App() {
 
   return (
     <>
+      <header className="site-header">
+        <nav className="hero-nav" aria-label="Portfolio sections">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+          </nav>
+      </header>
+
       <main>
         <section className='hero-section'>
           <div className="hero-text">

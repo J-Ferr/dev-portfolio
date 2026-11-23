@@ -18,6 +18,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  position: relative;
 
   padding: 70px 10% 80px;
   min-height: 100svh;
@@ -60,6 +61,57 @@
 
 .hero-name > span {
   display: inline-block;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #e3ffed;
+  border-bottom: 1px solid #d3dfdc;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(12px, 4vw, 24px);
+  padding: 4px 8%;
+}
+
+.hero-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #00111c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-nav a:hover,
+.hero-nav a:focus-visible {
+  color: #034748;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-nav a {
+    transition: transform 180ms ease-out, color 180ms ease-out;
+  }
+
+  .hero-nav a:hover {
+    transform: scale(1.08);
+  }
+}
+
+.hero-nav a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+#work,
+#about,
+#contact {
+  scroll-margin-top: 64px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
