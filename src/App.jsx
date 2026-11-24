@@ -10,6 +10,7 @@ import HeroName from './components/HeroName';
 
 function App() {
 
+  const [heroReplay, setHeroReplay] = useState(0);
   const [workWaveReplay, setWorkWaveReplay] = useState(0);
   const [aboutWaveReplay, setAboutWaveReplay] = useState(0);
 
@@ -23,7 +24,7 @@ function App() {
     <>
       <header className="site-header">
         <nav className="hero-nav" aria-label="Portfolio sections">
-                <a href="#home">
+                <a href="#home" onClick={() => setHeroReplay(count => count + 1)}>
                   Home</a>
                 <a href="#work" onClick={handleWorkClick}>
                   Work</a>
@@ -36,15 +37,16 @@ function App() {
 
       <main>
         <section className='hero-section' id="home">
-          <div className="hero-text">
+          <div className="hero-text" key={`hero-text-${heroReplay}`}>
             <p className="hero-greeting">HELLO, I'M</p>
             <HeroName />
           </div>
         
-          <div className="hero">
+          <div className="hero" key={`hero-wave-${heroReplay}`}>
           <CodeWave />
           </div>
         </section>
+
         <Projects waveReplay={workWaveReplay} />
         <About waveReplay={aboutWaveReplay} />
         <Skills />
