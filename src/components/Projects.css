@@ -1,4 +1,6 @@
 .projects {
+  position: relative;
+  isolation: isolate;
     padding: 64px 8%;
     background-color: #102c38;
     text-align: center;
@@ -19,12 +21,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 24px;
+  max-width: 1080px;
+  margin: 24px auto 0;
   text-align: left;
 }
 
 .project-card {
-  background-color: #f4f7f5;
+  background-color: rgb(244 247 245 / 70%);
   border: 1px solid #f4f7f5;
   border-radius: 16px;
   padding: 0;
@@ -115,4 +118,88 @@
 }
 .project-content {
   padding: 28px;
+}
+/* Blue wave in Works */
+.projects-wave {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.projects-wave svg {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  fill: none;
+  stroke: #355cff;
+  stroke-width: 2;
+  opacity: 0.55;
+  filter: drop-shadow(0 0 8px #355cff);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #work:target .projects-wave {
+    animation: projects-wave-arrival 900ms ease-out;
+  }
+}
+
+@keyframes projects-wave-arrival {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  30% {
+    filter: brightness(1.6);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .projects-wave path {
+    animation: projects-wave-ripple 9s ease-in-out
+      var(--wave-phase, 0s) infinite;
+  }
+
+  #work:target .projects-wave path {
+    stroke-dasharray: 1;
+    animation:
+      projects-wave-draw 1.4s ease-out var(--wave-delay, 0ms) both,
+      projects-wave-ripple 9s ease-in-out var(--wave-phase, 0s) infinite;
+  }
+}
+
+@keyframes projects-wave-ripple {
+  0%, 100% {
+    d: path("M -40 300 C 160 345, 260 320, 440 250 S 720 160, 860 155 S 1090 55, 1240 42");
+  }
+
+  33% {
+    d: path("M -40 300 C 160 329, 260 300, 440 257 S 720 179, 860 150 S 1090 43, 1240 42");
+  }
+
+  67% {
+    d: path("M -40 300 C 160 359, 260 325, 440 237 S 720 147, 860 164 S 1090 68, 1240 42");
+  }
+}
+
+@keyframes projects-wave-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.projects-wave-main {
+  stroke-width: 2.5;
+}
+
+.projects-wave-echo {
+  stroke-width: 1;
+  opacity: 0.35;
 }

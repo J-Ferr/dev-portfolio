@@ -5,9 +5,26 @@ import taskManagerImage from '../assets/projects/task-manager.png';
 import ecomApiImage from '../assets/projects/e-comm.png';
 
 
-function Projects() {
+function Projects({ waveReplay }) {
     return (
         <section className="projects" id="work">
+            <div key={waveReplay} className="projects-wave" aria-hidden="true">
+                <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+                    {[0, -12, 12, -24, 24, -36].map((offset, index) => (
+                        <path
+                            key={offset}
+                            className={index === 0 ? "projects-wave-main" : "projects-wave-echo"}
+                            d="M -40 300 C 160 345, 260 320, 440 250 S 720 160, 860 155 S 1090 55, 1240 42"
+                            transform={`translate(0 ${offset})`}
+                            pathLength="1"
+                            style={{
+                              "--wave-delay": `${index * 110}ms`,
+                              "--wave-phase": `${index * -0.65}s`,
+                            }}
+                        />
+                        ))}
+                </svg>
+            </div>
             <h2>Selected Work</h2>
             
 
