@@ -8,7 +8,8 @@ import ecomApiImage from '../assets/projects/e-comm.png';
 function Projects({ waveReplay }) {
     return (
         <section className="projects" id="work">
-            <div key={waveReplay} className="projects-wave" aria-hidden="true">
+            <div className='projects-wave-layer'>
+              <div key={waveReplay} className="projects-wave" aria-hidden="true">
                 <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
                     {[0, -12, 12, -24, 24, -36].map((offset, index) => (
                         <path
@@ -24,7 +25,9 @@ function Projects({ waveReplay }) {
                         />
                         ))}
                 </svg>
+              </div>
             </div>
+            
             <h2>Selected Work</h2>
             
 

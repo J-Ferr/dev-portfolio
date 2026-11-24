@@ -120,10 +120,16 @@
   padding: 28px;
 }
 /* Blue wave in Works */
-.projects-wave {
+.projects-wave-layer {
   position: absolute;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
+}
+
+.projects-wave {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   pointer-events: none;
 }
@@ -139,6 +145,15 @@
   stroke-width: 2;
   opacity: 0.55;
   filter: drop-shadow(0 0 8px #355cff);
+}
+
+@media (max-width: 768px) {
+  .projects-wave {
+    position: sticky;
+    inset: auto;
+    top: 64px;
+    height: clamp(360px, 110vw, 480px);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
