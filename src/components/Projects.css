@@ -125,6 +125,11 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  visibility: hidden;
+}
+
+.projects-wave-layer.is-in-view {
+  visibility: visible;
 }
 
 .projects-wave {
@@ -157,7 +162,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  #work:target .projects-wave {
+  .projects-wave-layer.is-in-view .projects-wave {
     animation: projects-wave-arrival 900ms ease-out;
   }
 }
@@ -173,12 +178,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .projects-wave path {
-    animation: projects-wave-ripple 9s ease-in-out
-      var(--wave-phase, 0s) infinite;
-  }
-
-  #work:target .projects-wave path {
+  .projects-wave-layer.is-in-view .projects-wave path {
     stroke-dasharray: 1;
     animation:
       projects-wave-draw 1.4s ease-out var(--wave-delay, 0ms) both,

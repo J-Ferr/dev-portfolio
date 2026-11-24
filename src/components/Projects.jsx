@@ -1,3 +1,4 @@
+import { useEffect, useState, useRef } from 'react';
 import './Projects.css';
 import ProjectCard from './ProjectCard';
 import moodReflectionImage from '../assets/projects/mood-reflection.png';
@@ -6,9 +7,22 @@ import ecomApiImage from '../assets/projects/e-comm.png';
 
 
 function Projects({ waveReplay }) {
+    const projectsGridRef = useRef(null);
+    const [showWorkWave, setShowWorkWave] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setShowWorkWave(entry.isIntersecting),
+            { rootMargin: "0px 0px -100px 0px" }
+        );
+
+        observer.observe(projectsGridRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <section className="projects" id="work">
-            <div className='projects-wave-layer'>
+            <div className={`projects-wave-layer${showWorkWave ? " is-in-view" : ""}`}>
               <div key={waveReplay} className="projects-wave" aria-hidden="true">
                 <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
                     {[0, -12, 12, -24, 24, -36].map((offset, index) => (
@@ -31,7 +45,7 @@ function Projects({ waveReplay }) {
             <h2>Selected Work</h2>
             
 
-            <div className="projects-grid">
+            <div className="projects-grid" ref={projectsGridRef}>
                 <ProjectCard
                     title="Mood Reflection App"
                     description="A personal reflection app that helps users 
