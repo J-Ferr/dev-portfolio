@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CodeWave from './components/CodeWave';
 import Projects from './components/Projects';
 import About from './components/About';
@@ -11,6 +11,7 @@ import HeroName from './components/HeroName';
 function App() {
 
   const [workWaveReplay, setWorkWaveReplay] = useState(0);
+  const [aboutWaveReplay, setAboutWaveReplay] = useState(0);
 
   function handleWorkClick() {
     if (window.location.hash === "#work") {
@@ -22,10 +23,14 @@ function App() {
     <>
       <header className="site-header">
         <nav className="hero-nav" aria-label="Portfolio sections">
-                <a href="#home">Home</a>
-                <a href="#work" onClick={handleWorkClick}>Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">
+                  Home</a>
+                <a href="#work" onClick={handleWorkClick}>
+                  Work</a>
+                <a href="#about" onClick={() => setAboutWaveReplay(count => count + 1)}>
+                  About</a>
+                <a href="#contact">
+                  Contact</a>
           </nav>
       </header>
 
@@ -41,7 +46,7 @@ function App() {
           </div>
         </section>
         <Projects waveReplay={workWaveReplay} />
-        <About />
+        <About waveReplay={aboutWaveReplay} />
         <Skills />
         <Contact />
       </main>

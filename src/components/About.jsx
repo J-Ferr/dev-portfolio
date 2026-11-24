@@ -1,9 +1,50 @@
 import './About.css';
+import { useEffect, useRef, useState } from 'react';
 import { Code2, Lightbulb, Users, BookOpen, Palette } from 'lucide-react';
 
-function About() {
+function About({ waveReplay }) {
+    const aboutRef = useRef(null);
+    const [showAboutWaves, setShowAboutWaves] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setShowAboutWaves(entry.isIntersecting),
+            { rootMargin: '0px 0px -100px 0px' }
+        );
+
+        observer.observe(aboutRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="about" id="about">
+        <section
+            ref={aboutRef}
+            id="about"
+            className={`about${showAboutWaves ? ' about-waves-visible' : ''}`}
+        >
+            <svg
+                key={waveReplay}
+                className="about-wave"
+                viewBox="0 0 1440 500"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                {[
+                    'translate(0 0)',
+                    'translate(19 -13) rotate(-4 850 55)',
+                    'translate(42 -24) rotate(-9 850 55)',
+                    'translate(68 -36) rotate(-15 850 55)',
+                ].map((transform, index) => (
+                    <path
+                        key={transform}
+                        pathLength="1"
+                        transform={transform}
+                        d="M 90 -295 C 96 -195, 110 -117, 130 -36 C 150 45, 275 122, 388 98 S 590 23, 750 40 C 874 40, 955 74, 1018 212 S 1084 440, 1190 530 S 1360 660, 1490 720"
+                        style={{ '--wave-delay': `${index * 200}ms` }}
+                    />
+                ))}
+            </svg>
+
             <div className="about-container">
 
                 <div className="about-text">

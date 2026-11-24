@@ -1,6 +1,8 @@
 .about {
   background-color: #f4f7f5;
   padding: 70px 8%;
+  position: relative;
+  isolation: isolate;
 }
 
 .about-container {
@@ -34,7 +36,7 @@
 }
 
 .about-strengths {
-  background-color: #034748;
+  background-color: rgb(3 71 72 / 84%);
   padding: 36px;
   border-radius: 16px;
 }
@@ -75,5 +77,97 @@
 
   .about-text h2 {
     font-size: 2rem;
+  }
+}
+/* Wave */
+.about-wave {
+  position: absolute;
+  visibility: hidden;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  --about-ripple: about-wave-ripple-sweep;
+  pointer-events: none;
+  fill: none;
+  stroke: #258c98;
+  filter: drop-shadow(0 0 5px rgb(67 142 134 / 45%));
+}
+
+.about-waves-visible .about-wave {
+    visibility: visible;
+}
+
+.about-wave path {
+  --strand-opacity: 0.6;
+  stroke-width: 3.5;
+  opacity: var(--strand-opacity);
+}
+
+.about-wave path + path {
+  --strand-opacity: 0.32;
+  stroke-width: 1.75;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .about-wave path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  .about-waves-visible .about-wave {
+    animation: about-wave-glow 1.4s ease-out var(--wave-delay, 0ms);
+  }
+
+  .about-waves-visible .about-wave path {
+    animation:
+      about-wave-draw 1.2s ease-out var(--wave-delay, 0ms) both,
+      about-wave-fade 800ms ease-out var(--wave-delay, 0ms) both,
+      var(--about-ripple) 6s ease-in-out var(--wave-delay, 0ms) infinite;
+  }
+}
+
+@keyframes about-wave-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-wave {
+    opacity: 0.75;
+  }
+}
+
+@keyframes about-wave-ripple-sweep {
+  0%, 100% {
+    d: path("M 90 -295 C 96 -195, 110 -117, 130 -36 C 150 45, 275 122, 388 98 S 590 23, 750 40 C 874 40, 955 74, 1018 212 S 1084 440, 1190 530 S 1360 660, 1490 720");
+  }
+
+  33% {
+    d: path("M 90 -295 C 96 -195, 110 -117, 130 -36 C 155 60, 285 146, 388 110 S 600 15, 750 36 C 882 36, 990 80, 1048 226 S 1090 446, 1190 530 S 1360 660, 1490 720");
+  }
+
+  67% {
+    d: path("M 90 -295 C 96 -195, 110 -117, 130 -36 C 148 28, 270 100, 388 83 S 578 35, 750 48 C 862 48, 928 55, 990 194 S 1070 427, 1190 530 S 1360 660, 1490 720");
+  }
+}
+
+@keyframes about-wave-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgb(67 142 134 / 45%));
+  }
+
+  45% {
+    filter: drop-shadow(0 0 9px rgb(67 142 134 / 85%));
+  }
+}
+
+@keyframes about-wave-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: var(--strand-opacity);
   }
 }
