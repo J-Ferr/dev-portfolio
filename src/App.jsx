@@ -22,6 +22,7 @@ function App() {
     <>
       <header className="site-header">
         <nav className="hero-nav" aria-label="Portfolio sections">
+                <a href="#home">Home</a>
                 <a href="#work" onClick={handleWorkClick}>Work</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
@@ -29,7 +30,7 @@ function App() {
       </header>
 
       <main>
-        <section className='hero-section'>
+        <section className='hero-section' id="home">
           <div className="hero-text">
             <p className="hero-greeting">HELLO, I'M</p>
             <HeroName />
